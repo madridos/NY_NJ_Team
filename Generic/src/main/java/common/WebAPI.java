@@ -1,6 +1,8 @@
 package common;
 
+import io.cucumber.java.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -12,10 +14,13 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.*;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -49,7 +54,7 @@ public class WebAPI {
         } else {
             getLocalDriver(browserName);
         }
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
         driver.get(url);
@@ -100,27 +105,28 @@ public class WebAPI {
         }
         return driver;
     }
+    public void screenShot(Scenario scenario) throws IOException {
+        if (scenario.isFailed()) {
+            try {
+                Object Timestamp = new SimpleDateFormat(" yy-MM-dd HH-mm-ss").format(new Date());
+                TakesScreenshot shot = (TakesScreenshot) driver;
+                File file = shot.getScreenshotAs(OutputType.FILE);
+                File screensho_Destination = new File("./target/Screenshot/Screenshot" + scenario.getName() + Timestamp + ".png");
+                FileUtils.copyFile(file, screensho_Destination);
+            } catch (WebDriverException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            try {
+                scenario.getName();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
 
     // Helper methods
     public void clickOnElement(String locator) {

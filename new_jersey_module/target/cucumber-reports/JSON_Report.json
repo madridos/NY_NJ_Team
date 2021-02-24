@@ -1,0 +1,250 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 6,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 17267000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user landed on state farm home page",
+            "match": {
+              "location": "dz.qa.njTest.stepDefinitions.ClaimPageSD.user_landed_on_state_farm_home_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2407795000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user clicks on CLAIMS on the page header bar menu",
+            "match": {
+              "location": "dz.qa.njTest.stepDefinitions.ClaimPageSD.user_clicks_on_CLAIMS_on_the_page_header_bar_menu()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2097121000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "drop down menu section containing \"State Farm Claims\",\"Claims Help Center\" and \"Roadside Assistance\" should appear",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"State Farm Claims\"",
+                  "offset": 34
+                },
+                {
+                  "val": "\"Claims Help Center\"",
+                  "offset": 54
+                },
+                {
+                  "val": "\"Roadside Assistance\"",
+                  "offset": 79
+                }
+              ],
+              "location": "dz.qa.njTest.stepDefinitions.ClaimPageSD.drop_down_menu_section_containing_and_should_appear(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 7281963000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "user clicks on \"State Farm Claims\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"State Farm Claims\"",
+                  "offset": 15
+                }
+              ],
+              "location": "dz.qa.njTest.stepDefinitions.ClaimPageSD.user_clicks_on(java.lang.String)"
+            },
+            "keyword": "When "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-02-24T03:56:18.628Z",
+        "before": [
+          {
+            "result": {
+              "duration": 16609886000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "dz.qa.njTest.testbase.SetUp.setUp_Init()"
+            }
+          }
+        ],
+        "line": 12,
+        "name": "aghiles 00 file a claim for costumers for Auto \u0026Motorcycle",
+        "description": "",
+        "id": "file-a-claim-for-costumers;aghiles-00-file-a-claim-for-costumers-for-auto-\u0026motorcycle",
+        "after": [
+          {
+            "result": {
+              "duration": 791143000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "dz.qa.njTest.testbase.SetUp.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2694400000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "costumers click on \"file a claim\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"file a claim\"",
+                  "offset": 19
+                }
+              ],
+              "location": "dz.qa.njTest.stepDefinitions.File_A_Claim_for_CustomersSD.costumers_click_on(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2175930000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "select \"Auto \u0026 Motorcycle",
+            "match": {
+              "location": "dz.qa.njTest.stepDefinitions.File_A_Claim_for_CustomersSD.select_Auto_Motorcycle()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element \u003ca role\u003d\"button\" id\u003d\"accident\" href\u003d\"#who-is\" class\u003d\"-oneX-btn-primary__anchor panelButton continue\"\u003e...\u003c/a\u003e is not clickable at point (741, 698). Other element would receive the click: \u003cp id\u003d\"optpara\" style\u003d\"display: block;\"\u003e...\u003c/p\u003e\n  (Session info: chrome\u003d88.0.4324.192)\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027Aghiless-MBP-2.fios-router.home\u0027, ip: \u0027fe80:0:0:0:5b:bb41:7137:8a9%en0\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.16\u0027, java.version: \u002711.0.6\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.192, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: /var/folders/xd/rhf4b345043...}, goog:chromeOptions: {debuggerAddress: localhost:63625}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 21463ea2fee0f365e87f0b787705094b\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)\n\tat org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)\n\tat com.sun.proxy.$Proxy20.click(Unknown Source)\n\tat dz.qa.njPages.File_A_Claim_For_Costumers.a_start_option_should_be_displayed_and_click_to_start_Step(File_A_Claim_For_Costumers.java:47)\n\tat dz.qa.njTest.stepDefinitions.File_A_Claim_for_CustomersSD.a_start_option_should_be_displayed_and_click_to_start(File_A_Claim_for_CustomersSD.java:29)\n\tat ✽.a start option should be displayed and click to start(file:///Users/aghilesboutaleb/IdeaProjects/NY_NJ_Team/new_jersey_module/src/test/resources/File_A_Claim_For_Costumers.feature:15)\n",
+              "duration": 3107791000,
+              "status": "failed"
+            },
+            "line": 15,
+            "name": "a start option should be displayed and click to start",
+            "match": {
+              "location": "dz.qa.njTest.stepDefinitions.File_A_Claim_for_CustomersSD.a_start_option_should_be_displayed_and_click_to_start()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 181000,
+              "status": "skipped"
+            },
+            "line": 16,
+            "name": "you select a state farm costumer",
+            "match": {
+              "location": "dz.qa.njTest.stepDefinitions.File_A_Claim_for_CustomersSD.you_select_a_state_farm_costumer()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 108000,
+              "status": "skipped"
+            },
+            "line": 17,
+            "name": "press continue button",
+            "match": {
+              "location": "dz.qa.njTest.stepDefinitions.File_A_Claim_for_CustomersSD.press_continue_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 81000,
+              "status": "skipped"
+            },
+            "line": 18,
+            "name": "a login field should appear",
+            "match": {
+              "location": "dz.qa.njTest.stepDefinitions.File_A_Claim_for_CustomersSD.a_login_field_should_appear()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 76000,
+              "status": "skipped"
+            },
+            "line": 19,
+            "name": "costumers enter user id",
+            "match": {
+              "location": "dz.qa.njTest.stepDefinitions.File_A_Claim_for_CustomersSD.costumers_enter_user_id()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 460000,
+              "status": "skipped"
+            },
+            "line": 20,
+            "name": "costumers enter password",
+            "match": {
+              "location": "dz.qa.njTest.stepDefinitions.File_A_Claim_for_CustomersSD.costumers_enter_password()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 201000,
+              "status": "skipped"
+            },
+            "line": 21,
+            "name": "click on log in",
+            "match": {
+              "location": "dz.qa.njTest.stepDefinitions.File_A_Claim_for_CustomersSD.click_on_log_in()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 95000,
+              "status": "skipped"
+            },
+            "line": 22,
+            "name": "a welcome home page for costumers should appear",
+            "match": {
+              "location": "dz.qa.njTest.stepDefinitions.File_A_Claim_for_CustomersSD.a_welcome_home_page_for_costumers_should_appear()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "File a claim for costumers",
+    "description": "  In order to test file a claim\n  As a costumer\n  I have to specify the features of file a claim",
+    "id": "file-a-claim-for-costumers",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/File_A_Claim_For_Costumers.feature",
+    "tags": []
+  }
+]
