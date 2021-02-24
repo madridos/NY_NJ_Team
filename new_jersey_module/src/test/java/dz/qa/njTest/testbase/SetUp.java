@@ -2,6 +2,7 @@ package dz.qa.njTest.testbase;
 import common.WebAPI;
 import dz.qa.njPages.HomePage;
 import dz.qa.njPages.LoginPage;
+import dz.qa.njPages.Term_LifePage;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -17,9 +18,12 @@ import java.util.Date;
 public class SetUp extends WebAPI {
     public static HomePage homePage;
     public static LoginPage loginPage;
+    public static Term_LifePage term_LifePage;
     public static void Init() {
         homePage = PageFactory.initElements(driver, HomePage.class);
         loginPage = PageFactory.initElements(driver, LoginPage.class);
+        term_LifePage = PageFactory.initElements(driver, Term_LifePage.class);
+
     }
     @Before
     public void setUp_Init() throws IOException {
@@ -27,32 +31,10 @@ public class SetUp extends WebAPI {
         config.loadProperties();
         Init();
     }
-    @After(order = 2)
-    public void tearDown() throws IOException {
+    @After
+    public void tearDown(Scenario scenario) throws IOException {
+        screenShot(scenario);
         SetUp.driver.quit();
-    }
-    //ScreenShot method
-    @After(order = 1)
-    public void screenShot(Scenario scenario) throws IOException {
-        if (scenario.isFailed()) {
-            try {
-                Object Timestamp = new SimpleDateFormat(" yy-MM-dd HH-mm-ss").format(new Date());
-                TakesScreenshot shot = (TakesScreenshot) driver;
-                File file = shot.getScreenshotAs(OutputType.FILE);
-                File screensho_Destination = new File("./target/Screenshot/Screenshot" + scenario.getName() + Timestamp + ".png");
-                FileUtils.copyFile(file, screensho_Destination);
-            } catch (WebDriverException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } else {
-            try {
-                scenario.getName();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
     }
 }
 
