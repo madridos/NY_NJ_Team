@@ -1,6 +1,8 @@
 package common;
 
+import io.cucumber.java.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -15,7 +17,9 @@ import org.openqa.selenium.support.ui.*;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -27,58 +31,12 @@ public class WebAPI {
    // static DataReader dataReader = new DataReader();
 
     //Browser SetUp
-
     public static WebDriver driver;
     public static WebDriverWait wait;
     public String browserstack_username = "mhshahib1";
     public String browserstack_accesskey = "YA4xsqrMqFurrGduX1X9";
     public String saucelabs_username = "";
     public String saucelabs_accesskey = "";
-
-    public static void setProperties(String BrowserName,String url) throws IOException {
-        Properties prop = new Properties();
-        //InputStream ism = new FileInputStream("/secret.properties");
-        FileOutputStream ism = new FileOutputStream("/Users/mezibena/IdeaProjects/RestAPIAutomationFramework_WeekDays_SeleniumDecember2019/NY_NJ_Team/new_jersey_module/src/main/resources/config.properties");
-        prop.setProperty("module0.browserName",BrowserName);
-        prop.setProperty("module0.url",url);
-        prop.store(ism,null);
-        ism.close();
-    }
-    public static void setBrowserProperties(String BrowserName) throws IOException {
-        Properties prop = new Properties();
-        InputStream ism = new FileInputStream("src/config.properties");
-        prop.load(ism);
-        FileOutputStream ism1 = new FileOutputStream("src/config.properties");
-        boolean useCloudEnv = Boolean.parseBoolean(prop.getProperty("module0.useCloudEnv "));
-        String cloudEnvName = prop.getProperty("module0.cloudEnvName");
-        String os = prop.getProperty("module0.os");
-        String os_version = prop.getProperty("module0.os_version");
-        String browserName = prop.getProperty("module0.browserName");
-        prop.setProperty("module0.browserName",BrowserName);
-        String browserVersion = prop.getProperty("module0.browserVersion");
-        String url = prop.getProperty("module0.url");
-        prop.store(ism1,null);
-        ism1.close();
-    }
-    public static void setUrlProperties(String Url) throws IOException {
-        Properties prop = new Properties();
-        InputStream ism = new FileInputStream("src/config.properties");
-        prop.load(ism);
-        FileOutputStream ism1 = new FileOutputStream("src/config.properties");
-        boolean useCloudEnv = Boolean.parseBoolean(prop.getProperty("module0.useCloudEnv "));
-        String cloudEnvName = prop.getProperty("module0.cloudEnvName");
-        String os = prop.getProperty("module0.os");
-        String os_version = prop.getProperty("module0.os_version");
-        String browserName = prop.getProperty("module0.browserName");
-        prop.getProperty("module0.browserName");
-        String browserVersion = prop.getProperty("module0.browserVersion");
-        prop.setProperty("module0.url",Url);
-        prop.store(ism1,null);
-        ism1.close();
-    }
-
-
-
     public void setUp(Boolean useCloudEnv, String cloudEnvName,
                       String os, String os_version, String browserName,
                       String browserVersion, String url) throws IOException {
@@ -143,28 +101,28 @@ public class WebAPI {
         }
         return driver;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    //ScreenShot method
+    public void screenShot(Scenario scenario) throws IOException {
+        if (scenario.isFailed()) {
+            try {
+                Object Timestamp = new SimpleDateFormat(" yy-MM-dd HH-mm-ss").format(new Date());
+                TakesScreenshot shot = (TakesScreenshot) driver;
+                File file = shot.getScreenshotAs(OutputType.FILE);
+                File screensho_Destination = new File("./target/Screenshot/Screenshot" + scenario.getName() + Timestamp + ".png");
+                FileUtils.copyFile(file, screensho_Destination);
+            } catch (WebDriverException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            try {
+                scenario.getName();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
     // Helper methods
     public void clickOnElement(String locator) {
         try {
