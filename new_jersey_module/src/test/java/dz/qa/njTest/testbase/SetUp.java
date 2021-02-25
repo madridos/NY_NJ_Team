@@ -1,27 +1,31 @@
 package dz.qa.njTest.testbase;
 import common.WebAPI;
-import dz.qa.njPages.*;
+import dz.qa.njPages.GetPetInsuranceQuotePage;
+import dz.qa.njPages.HomePage;
+import dz.qa.njPages.LoginPage;
+import dz.qa.njPages.PetMedicalPage;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.support.PageFactory;
+import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 public class SetUp extends WebAPI {
     public static HomePage homePage;
     public static LoginPage loginPage;
-    public static ClaimPage claimPage;
-    public static Non_Costumers_ClaimPage non_Costumers_ClaimPage;
-    public static File_A_Claim_For_Costumers file_a_claim_for_costumers;
-    public static GetAQuotePage getAQuotePage;
-  public static HealthPage healthPage;
+    public static PetMedicalPage petMedicalPage;
+    public static GetPetInsuranceQuotePage getPetInsuranceQuotePage;
     public static void Init() {
         homePage = PageFactory.initElements(driver, HomePage.class);
         loginPage = PageFactory.initElements(driver, LoginPage.class);
-        claimPage=PageFactory.initElements(driver,ClaimPage.class);
-        non_Costumers_ClaimPage=PageFactory.initElements(driver,Non_Costumers_ClaimPage.class);
-        file_a_claim_for_costumers=PageFactory.initElements(driver,File_A_Claim_For_Costumers.class);
-        getAQuotePage=PageFactory.initElements(driver,GetAQuotePage.class);
-        healthPage = PageFactory.initElements(driver, HealthPage.class);
+        petMedicalPage = PageFactory.initElements(driver, PetMedicalPage.class);
+        getPetInsuranceQuotePage = PageFactory.initElements(driver,GetPetInsuranceQuotePage.class);
     }
     @Before
     public void setUp_Init() throws IOException {
@@ -29,11 +33,11 @@ public class SetUp extends WebAPI {
         config.loadProperties();
         Init();
     }
-    //ScreenShot method
     @After
     public void tearDown(Scenario scenario) throws IOException {
         screenShot(scenario);
         SetUp.driver.quit();
     }
+
 }
 
