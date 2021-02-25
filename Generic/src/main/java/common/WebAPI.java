@@ -31,12 +31,14 @@ public class WebAPI {
    // static DataReader dataReader = new DataReader();
 
     //Browser SetUp
+
     public static WebDriver driver;
     public static WebDriverWait wait;
     public String browserstack_username = "mhshahib1";
     public String browserstack_accesskey = "YA4xsqrMqFurrGduX1X9";
     public String saucelabs_username = "";
     public String saucelabs_accesskey = "";
+
     public void setUp(Boolean useCloudEnv, String cloudEnvName,
                       String os, String os_version, String browserName,
                       String browserVersion, String url) throws IOException {
@@ -101,7 +103,7 @@ public class WebAPI {
         }
         return driver;
     }
-    //ScreenShot method
+    //screenShot Method
     public void screenShot(Scenario scenario) throws IOException {
         if (scenario.isFailed()) {
             try {
