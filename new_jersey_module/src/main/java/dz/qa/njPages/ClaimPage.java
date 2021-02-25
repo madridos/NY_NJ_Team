@@ -7,8 +7,8 @@ import org.openqa.selenium.support.How;
 import java.util.ArrayList;
 import java.util.List;
 public class ClaimPage extends WebAPI {
-    final static String claimButton_click_XPath = "//span[contains(text(),'CLAIMS')]";
-    @FindBy(how = How.XPATH, using = claimButton_click_XPath)
+    final static String claimButtonClickXPath = "//span[contains(text(),'CLAIMS')]";
+    @FindBy(how = How.XPATH, using = claimButtonClickXPath)
     public static WebElement claimButton_click;
     final static String claim_DropDown_Section_List_Css = "#oneX-submenu-claims div a";
     @FindBy(how = How.CSS, using = claim_DropDown_Section_List_Css)
