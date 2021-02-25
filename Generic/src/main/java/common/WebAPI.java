@@ -22,6 +22,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 //import utilities.DataReader;
@@ -39,8 +40,6 @@ public class WebAPI {
     public String saucelabs_username = "";
     public String saucelabs_accesskey = "";
 
-
-
     public void setUp(Boolean useCloudEnv, String cloudEnvName,
                       String os, String os_version, String browserName,
                       String browserVersion, String url) throws IOException {
@@ -54,7 +53,7 @@ public class WebAPI {
         } else {
             getLocalDriver(browserName);
         }
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
         driver.get(url);
@@ -105,6 +104,7 @@ public class WebAPI {
         }
         return driver;
     }
+    //ScreenShot method
     public void screenShot(Scenario scenario) throws IOException {
         if (scenario.isFailed()) {
             try {
@@ -125,9 +125,7 @@ public class WebAPI {
                 e.printStackTrace();
             }
         }
-
     }
-
     // Helper methods
     public void clickOnElement(String locator) {
         try {
