@@ -12,11 +12,12 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.*;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 //import utilities.DataReader;
@@ -33,6 +34,48 @@ public class WebAPI {
     public String browserstack_accesskey = "YA4xsqrMqFurrGduX1X9";
     public String saucelabs_username = "";
     public String saucelabs_accesskey = "";
+
+    public static void setProperties(String BrowserName,String url) throws IOException {
+        Properties prop = new Properties();
+        //InputStream ism = new FileInputStream("/secret.properties");
+        FileOutputStream ism = new FileOutputStream("/Users/mezibena/IdeaProjects/RestAPIAutomationFramework_WeekDays_SeleniumDecember2019/NY_NJ_Team/new_jersey_module/src/main/resources/config.properties");
+        prop.setProperty("module0.browserName",BrowserName);
+        prop.setProperty("module0.url",url);
+        prop.store(ism,null);
+        ism.close();
+    }
+    public static void setBrowserProperties(String BrowserName) throws IOException {
+        Properties prop = new Properties();
+        InputStream ism = new FileInputStream("src/config.properties");
+        prop.load(ism);
+        FileOutputStream ism1 = new FileOutputStream("src/config.properties");
+        boolean useCloudEnv = Boolean.parseBoolean(prop.getProperty("module0.useCloudEnv "));
+        String cloudEnvName = prop.getProperty("module0.cloudEnvName");
+        String os = prop.getProperty("module0.os");
+        String os_version = prop.getProperty("module0.os_version");
+        String browserName = prop.getProperty("module0.browserName");
+        prop.setProperty("module0.browserName",BrowserName);
+        String browserVersion = prop.getProperty("module0.browserVersion");
+        String url = prop.getProperty("module0.url");
+        prop.store(ism1,null);
+        ism1.close();
+    }
+    public static void setUrlProperties(String Url) throws IOException {
+        Properties prop = new Properties();
+        InputStream ism = new FileInputStream("src/config.properties");
+        prop.load(ism);
+        FileOutputStream ism1 = new FileOutputStream("src/config.properties");
+        boolean useCloudEnv = Boolean.parseBoolean(prop.getProperty("module0.useCloudEnv "));
+        String cloudEnvName = prop.getProperty("module0.cloudEnvName");
+        String os = prop.getProperty("module0.os");
+        String os_version = prop.getProperty("module0.os_version");
+        String browserName = prop.getProperty("module0.browserName");
+        prop.getProperty("module0.browserName");
+        String browserVersion = prop.getProperty("module0.browserVersion");
+        prop.setProperty("module0.url",Url);
+        prop.store(ism1,null);
+        ism1.close();
+    }
 
 
 
