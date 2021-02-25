@@ -2,6 +2,7 @@ package dz.qa.njTest.testbase;
 import common.WebAPI;
 import dz.qa.njPages.HomePage;
 import dz.qa.njPages.LoginPage;
+import dz.qa.njPages.MedicareSupplementPage;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -17,9 +18,11 @@ import java.util.Date;
 public class SetUp extends WebAPI {
     public static HomePage homePage;
     public static LoginPage loginPage;
+    public static MedicareSupplementPage medicareSupplementPage;
     public static void Init() {
         homePage = PageFactory.initElements(driver, HomePage.class);
         loginPage = PageFactory.initElements(driver, LoginPage.class);
+        medicareSupplementPage=PageFactory.initElements(driver,MedicareSupplementPage.class);
     }
     @Before
     public void setUp_Init() throws IOException {
