@@ -17,6 +17,7 @@ public class SetUp extends WebAPI {
     public static HealthPage healthPage;
     public static RentersQuotePage rentersQuotePage;
     public static Term_LifePage term_LifePage;
+    public static MedicareSupplementPage medicareSupplementPage;
     public static GetPetInsuranceQuotePage getPetInsuranceQuotePage;
     public static PetMedicalPage petMedicalPage;
     public static void Init() {
@@ -31,6 +32,7 @@ public class SetUp extends WebAPI {
         term_LifePage = PageFactory.initElements(driver,Term_LifePage.class);
         getPetInsuranceQuotePage=PageFactory.initElements(driver,GetPetInsuranceQuotePage.class);
         petMedicalPage=PageFactory.initElements(driver,PetMedicalPage.class);
+        medicareSupplementPage = PageFactory.initElements(driver,MedicareSupplementPage.class);
     }
     @Before
     public void setUp_Init() throws IOException {
