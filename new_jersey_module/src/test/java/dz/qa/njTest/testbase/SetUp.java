@@ -35,6 +35,7 @@ public class SetUp extends WebAPI {
         config.loadProperties();
         Init();
     }
+    //ScreenShot method
     @After
     public void tearDown(Scenario scenario) throws IOException {
         screenShot(scenario);
