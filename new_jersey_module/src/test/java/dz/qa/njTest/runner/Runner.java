@@ -5,7 +5,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
        // features = "src/test/resources",
-        features ="src/test/resources/File_A_Claim_For_Costumers.feature",
+        features = "src/test/resources/HealthPage.feature",
         glue = {"dz/qa/njTest/testbase","dz/qa/njTest/stepDefinitions"},
         plugin = { "html:target/cucumber-reports/HTML_Report.html","json:target/cucumber-reports/JSON_Report.json",
                 "junit:target/cucumber-reports/XML_Report.xml"},
