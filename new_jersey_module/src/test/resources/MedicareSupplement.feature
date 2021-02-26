@@ -1,11 +1,11 @@
 Feature: Medicare Supplement
-Background:
-  Given the user launch the browser
-  And enter the state farm "URL" into a web browser.
-  Then state farm home Page appears
-  When user click on INSURANCE link on hom Page
-  And he clicks on Medicare Supplement
-  Then Medicare Supplement page appears
+  Background:
+    Given the user launch the browser
+    And enter the state farm "URL" into a web browser.
+    Then state farm home Page appears
+    When user click on INSURANCE link on hom Page
+    And he clicks on Medicare Supplement
+    Then Medicare Supplement page appears
 
   Scenario:Sen-01 scroll To Element
     Given user on Medicare Supplement scroll To Find an Agent Element
