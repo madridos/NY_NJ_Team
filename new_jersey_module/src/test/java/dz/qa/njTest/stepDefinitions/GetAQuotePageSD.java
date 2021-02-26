@@ -1,4 +1,5 @@
 package dz.qa.njTest.stepDefinitions;
+
 import dz.qa.njPages.GetAQuotePage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

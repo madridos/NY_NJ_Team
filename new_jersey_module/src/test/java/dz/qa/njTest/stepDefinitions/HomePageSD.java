@@ -9,7 +9,7 @@ public class HomePageSD extends HomePage {
         homePage.user_enter_the_state_farm_url_on_the_browser_test();
     }
     @Then("user should see the state farm home page lunched")
-    public void user_should_see_the_state_farm_home_page_lunched() throws InterruptedException {
+    public void user_should_see_the_state_farm_home_page_lunched() {
         homePage.user_should_see_the_state_farm_home_page_lunched_test();
     }
 }
