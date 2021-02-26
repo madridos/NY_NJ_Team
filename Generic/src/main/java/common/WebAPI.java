@@ -14,11 +14,11 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.*;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.SimpleDateFormat;
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -32,12 +32,14 @@ public class WebAPI {
    // static DataReader dataReader = new DataReader();
 
     //Browser SetUp
+
     public static WebDriver driver;
     public static WebDriverWait wait;
     public String browserstack_username = "mhshahib1";
     public String browserstack_accesskey = "YA4xsqrMqFurrGduX1X9";
     public String saucelabs_username = "";
     public String saucelabs_accesskey = "";
+
     public void setUp(Boolean useCloudEnv, String cloudEnvName,
                       String os, String os_version, String browserName,
                       String browserVersion, String url) throws IOException {
@@ -83,6 +85,7 @@ public class WebAPI {
         }
         return driver;
     }
+
     public WebDriver getCloudDriver(String envName, String envUsername, String envAccessKey, String os, String os_version, String browserName,
                                     String browserVersion) throws IOException {
         DesiredCapabilities cap = new DesiredCapabilities();
@@ -123,6 +126,31 @@ public class WebAPI {
             }
         }
     }
+<<<<<<< HEAD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=======
+>>>>>>> 7698be7d2603897136f6f204b8c1780203f9e177
     // Helper methods
     public void clickOnElement(String locator) {
         try {
@@ -704,7 +732,7 @@ public class WebAPI {
 //        }
 //        return flag;
 //    }
-
+//
 
     // Switches to newly opened tab, gets URL, closes new tab, switches back to parent tab
     public static String switchToTabAndGetURL() {
@@ -743,9 +771,9 @@ public class WebAPI {
 //        System.out.println("Switched back to \"" + driver.getTitle() + "\" window");
 //        System.out.println(driver.getCurrentUrl() + "\n");
 //
-//        boolean flag = compareTextToExpectedString(actualURL, path, sheetName);
+//     //   boolean flag = compareTextToExpectedString(actualURL, path, sheetName);
 //
-//        return flag;
+//     //   return flag;
 //    }
 
     // Loops through list of dropdown elements, clicks on each link individually, grabs each page URL, inserts into String[],
