@@ -1,0 +1,174 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 532000000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "user click on insurance button",
+            "match": {
+              "location": "dz.qa.njTest.stepDefinitions.PetMedicalPageSD.user_click_on_insurance_button()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1692000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user click on PET MEDICAL link",
+            "match": {
+              "location": "dz.qa.njTest.stepDefinitions.PetMedicalPageSD.user_click_on_PET_MEDICAL_link()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-02-26T08:51:38.202Z",
+        "before": [
+          {
+            "result": {
+              "duration": 6142000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "dz.qa.njTest.testbase.SetUp.setUp_Init()"
+            }
+          }
+        ],
+        "line": 6,
+        "name": "m1 enter the zip code and land in the Get a Pet Insurance Quote Page",
+        "description": "",
+        "id": "get-a-pet-insurance-quote;m1-enter-the-zip-code-and-land-in-the-get-a-pet-insurance-quote-page",
+        "after": [
+          {
+            "result": {
+              "duration": 886000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "dz.qa.njTest.testbase.SetUp.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 427000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user enter zip code \"11204\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"11204\"",
+                  "offset": 20
+                }
+              ],
+              "location": "dz.qa.njTest.stepDefinitions.GetPetInsuranceQuotePageSD.user_enter_zip_code(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 159000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user click on the start quote button",
+            "match": {
+              "location": "dz.qa.njTest.stepDefinitions.GetPetInsuranceQuotePageSD.user_click_on_the_start_quote_button()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2435000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user should see text \"Get A Pet Insurance Quote\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Get A Pet Insurance Quote\"",
+                  "offset": 21
+                }
+              ],
+              "location": "dz.qa.njTest.stepDefinitions.GetPetInsuranceQuotePageSD.user_should_see_text(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 576000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "user enter required feild information",
+            "match": {
+              "location": "dz.qa.njTest.stepDefinitions.GetPetInsuranceQuotePageSD.user_enter_required_feild_information(io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "said"
+                ]
+              },
+              {
+                "cells": [
+                  "dahdouh"
+                ]
+              },
+              {
+                "cells": [
+                  "2006 72 st"
+                ]
+              },
+              {
+                "cells": [
+                  "2f"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#welcome\\.continue\\]\"}\n  (Session info: chrome\u003d88.0.4324.192)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027Mezis-MBP.lan\u0027, ip: \u00272603:7000:8200:3991:0:0:0:11c5%en0\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.15.3\u0027, java.version: \u00271.8.0_162\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.192, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: /var/folders/_b/8cjk0hmn0rd...}, goog:chromeOptions: {debuggerAddress: localhost:61746}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: eff1b78d45b7ef92466f7b63f2cbb7e5\n*** Element info: {Using\u003did, value\u003dwelcome.continue]}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)\n\tat org.openqa.selenium.By$ById.findElement(By.java:188)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\n\tat com.sun.proxy.$Proxy17.click(Unknown Source)\n\tat dz.qa.njPages.GetPetInsuranceQuotePage.user_click_on_continue_Test(GetPetInsuranceQuotePage.java:60)\n\tat dz.qa.njTest.stepDefinitions.GetPetInsuranceQuotePageSD.user_click_on_continue(GetPetInsuranceQuotePageSD.java:36)\n\tat ✽.user click on continue(file:///Users/mezibena/IdeaProjects/RestAPIAutomationFramework_WeekDays_SeleniumDecember2019/NY_NJ_Team/new_jersey_module/src/test/resources/GetPetInsuranceQuotePage.feature:15)\n",
+              "duration": 20034000000,
+              "status": "failed"
+            },
+            "line": 15,
+            "name": "user click on continue",
+            "match": {
+              "location": "dz.qa.njTest.stepDefinitions.GetPetInsuranceQuotePageSD.user_click_on_continue()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Get a Pet Insurance Quote",
+    "description": "",
+    "id": "get-a-pet-insurance-quote",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/GetPetInsuranceQuotePage.feature",
+    "tags": []
+  }
+]
