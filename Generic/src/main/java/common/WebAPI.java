@@ -24,15 +24,10 @@ import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-
 //import utilities.DataReader;
-
 public class WebAPI {
-
    // static DataReader dataReader = new DataReader();
-
     //Browser SetUp
-
     public static WebDriver driver;
     public static WebDriverWait wait;
     public String browserstack_username = "mhshahib1";
