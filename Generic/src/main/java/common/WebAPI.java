@@ -14,8 +14,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.*;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -23,6 +22,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 //import utilities.DataReader;
@@ -32,14 +32,12 @@ public class WebAPI {
    // static DataReader dataReader = new DataReader();
 
     //Browser SetUp
-
     public static WebDriver driver;
     public static WebDriverWait wait;
     public String browserstack_username = "mhshahib1";
     public String browserstack_accesskey = "YA4xsqrMqFurrGduX1X9";
     public String saucelabs_username = "";
     public String saucelabs_accesskey = "";
-
     public void setUp(Boolean useCloudEnv, String cloudEnvName,
                       String os, String os_version, String browserName,
                       String browserVersion, String url) throws IOException {
@@ -85,7 +83,6 @@ public class WebAPI {
         }
         return driver;
     }
-
     public WebDriver getCloudDriver(String envName, String envUsername, String envAccessKey, String os, String os_version, String browserName,
                                     String browserVersion) throws IOException {
         DesiredCapabilities cap = new DesiredCapabilities();
@@ -104,7 +101,7 @@ public class WebAPI {
         }
         return driver;
     }
-
+    //ScreenShot method
     public void screenShot(Scenario scenario) throws IOException {
         if (scenario.isFailed()) {
             try {
@@ -125,7 +122,6 @@ public class WebAPI {
                 e.printStackTrace();
             }
         }
-
     }
     // Helper methods
     public void clickOnElement(String locator) {
@@ -617,8 +613,8 @@ public class WebAPI {
 //        }
 //        return flag;
 //    }
-
-    // Gets text from String[] and compares against expected String array from Excel workbook
+//
+//    // Gets text from String[] and compares against expected String array from Excel workbook
 //    public static boolean compareTextListToExpectedStringArray(String[] actualArray, String path, String sheetName) throws IOException {
 //        String[] expectedList = dataReader.fileReaderStringXSSF(path, sheetName);
 //
@@ -640,8 +636,8 @@ public class WebAPI {
 //        }
 //        return flag;
 //    }
-
-    // Compares actual string against an expected string from Excel workbook
+//
+//    // Compares actual string against an expected string from Excel workbook
 //    public static boolean compareTextToExpectedString(String actual, String path, String sheetName) throws IOException {
 //        String[] expectedArray = dataReader.fileReaderStringXSSF(path, sheetName);
 //        String expected = expectedArray[0];
@@ -656,7 +652,7 @@ public class WebAPI {
 //        }
 //        return flag;
 //    }
-
+//
 //    // Gets text from List<WebElements> and compares against expected String array from Excel workbook
 //    public static boolean compareAttributeListToExpectedStringArray(By by, String attribute, String path, String sheetName) throws IOException {
 //        List<WebElement> actualList = driver.findElements(by);
@@ -689,7 +685,7 @@ public class WebAPI {
 //        }
 //        return flag;
 //    }
-
+//
 //    public static boolean compareListSizeToExpectedCount(By by, String path, String sheetName) throws IOException {
 //        int[] expectedArray = dataReader.fileReaderIntegerXSSF(path, sheetName);
 //        int expected = expectedArray[0];
@@ -795,6 +791,5 @@ public class WebAPI {
     public void navigatebackWindow() {
         driver.navigate().back();
     }
-
 
 }
