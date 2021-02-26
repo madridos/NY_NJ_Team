@@ -1,6 +1,9 @@
 package dz.qa.njPages;
 import common.WebAPI;
 import org.junit.Assert;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 public class HomePage extends WebAPI {
     public void user_enter_the_state_farm_url_on_the_browser_test() {
         //driver.get("https://www.statefarm.com");
