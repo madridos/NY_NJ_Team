@@ -121,6 +121,31 @@ public class WebAPI {
             }
         }
     }
+<<<<<<< HEAD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=======
+>>>>>>> 7698be7d2603897136f6f204b8c1780203f9e177
     // Helper methods
     public void clickOnElement(String locator) {
         try {

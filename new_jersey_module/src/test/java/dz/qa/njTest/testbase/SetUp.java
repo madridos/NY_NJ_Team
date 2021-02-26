@@ -17,8 +17,6 @@ public class SetUp extends WebAPI {
     public static HealthPage healthPage;
     public static RentersQuotePage rentersQuotePage;
     public static Term_LifePage term_LifePage;
-    public static GetAutoQuote getAutoQuote;
-
     public static void Init() {
         homePage = PageFactory.initElements(driver, HomePage.class);
         loginPage = PageFactory.initElements(driver, LoginPage.class);
@@ -29,7 +27,6 @@ public class SetUp extends WebAPI {
         getAQuotePage=PageFactory.initElements(driver,GetAQuotePage.class);
         rentersQuotePage = PageFactory.initElements(driver,RentersQuotePage.class);
         term_LifePage = PageFactory.initElements(driver,Term_LifePage.class);
-        getAutoQuote = PageFactory.initElements(driver,GetAutoQuote.class);
     }
     @Before
     public void setUp_Init() throws IOException {
