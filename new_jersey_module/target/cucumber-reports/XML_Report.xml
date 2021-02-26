@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="16.248">
+    <testcase classname="Health Insurance" name="navigate and land in state farm health page" time="7.713">
+        <system-out>
+            <![CDATA[Given user is on state farm home page.......................................passed
+When user clicks on insurance link..........................................passed
+Then user should see a dropdown contains "HEALTH"...........................passed
+And user click on HEALTH link...............................................passed
+Then user should land on HEALTH page........................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Health Insurance" name="user should enter zip code" time="8.222">
+        <system-out>
+            <![CDATA[Given user is on state farm home page.......................................passed
+When user clicks on insurance link..........................................passed
+Then user should see a dropdown contains "HEALTH"...........................passed
+And user click on HEALTH link...............................................passed
+When user enters zip code...................................................passed
+And user clicks on find agent...............................................passed
+Then user should land find agent near you...................................passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>
