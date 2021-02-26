@@ -1,0 +1,12 @@
+dz/qa/njTest/stepDefinitions/HomePageSD.class
+dz/qa/njTest/stepDefinitions/Non_Costumers_ClaimSD.class
+dz/qa/njTest/testbase/Config.class
+dz/qa/njTest/stepDefinitions/GetAQuotePageSD.class
+dz/qa/njTest/stepDefinitions/ClaimPageSD.class
+dz/qa/njTest/stepDefinitions/LoginPageSD.class
+dz/qa/njTest/testbase/SetUp.class
+dz/qa/njTest/stepDefinitions/File_A_Claim_for_CustomersSD.class
+dz/qa/njTest/stepDefinitions/RentersQuotePageSD.class
+dz/qa/njTest/stepDefinitions/HealthPageSD.class
+dz/qa/njTest/stepDefinitions/Term_LifePageSD.class
+dz/qa/njTest/runner/Runner.class
