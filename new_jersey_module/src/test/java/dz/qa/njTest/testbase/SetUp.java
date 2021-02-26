@@ -6,6 +6,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.support.PageFactory;
 import java.io.IOException;
+
 public class SetUp extends WebAPI {
     public static HomePage homePage;
     public static LoginPage loginPage;
