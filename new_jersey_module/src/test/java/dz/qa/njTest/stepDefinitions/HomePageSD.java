@@ -10,6 +10,6 @@ public class HomePageSD extends HomePage {
     }
     @Then("user should see the state farm home page lunched")
     public void user_should_see_the_state_farm_home_page_lunched() {
-        homePage.user_should_see_the_state_farm_home_page_lunched_test();
+
     }
 }
