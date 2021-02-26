@@ -13,9 +13,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.*;
+
 import java.io.File;
 import java.io.IOException;
-import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -126,6 +126,31 @@ public class WebAPI {
             }
         }
     }
+<<<<<<< HEAD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=======
+>>>>>>> 7698be7d2603897136f6f204b8c1780203f9e177
     // Helper methods
     public void clickOnElement(String locator) {
         try {
