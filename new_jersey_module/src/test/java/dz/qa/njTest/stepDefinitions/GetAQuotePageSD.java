@@ -39,6 +39,7 @@ public class GetAQuotePageSD extends GetAQuotePage {
     public void user_click_on_next_Vehicles_button() throws InterruptedException {
         getAQuotePage.user_click_on_next_Vehicles_button_Step();
     }
+
 //    @Then("User should see the next form {string}")
 //    public void user_should_see_the_next_form(String string) throws InterruptedException {
 //        getAQuotePage.user_should_see_the_next_form_Step(string);

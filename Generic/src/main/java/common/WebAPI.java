@@ -28,6 +28,7 @@ import java.util.concurrent.TimeUnit;
 public class WebAPI {
    // static DataReader dataReader = new DataReader();
     //Browser SetUp
+
     public static WebDriver driver;
     public static WebDriverWait wait;
     public String browserstack_username = "mhshahib1";
@@ -99,7 +100,7 @@ public class WebAPI {
         }
         return driver;
     }
-    //ScreenShot method
+    //screenShot Method
     public void screenShot(Scenario scenario) throws IOException {
         if (scenario.isFailed()) {
             try {
