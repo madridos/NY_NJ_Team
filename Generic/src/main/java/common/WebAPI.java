@@ -40,8 +40,6 @@ public class WebAPI {
     public String saucelabs_username = "";
     public String saucelabs_accesskey = "";
 
-
-
     public void setUp(Boolean useCloudEnv, String cloudEnvName,
                       String os, String os_version, String browserName,
                       String browserVersion, String url) throws IOException {

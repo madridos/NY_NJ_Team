@@ -30,32 +30,11 @@ public class SetUp extends WebAPI {
         config.loadProperties();
         Init();
     }
-    @After(order = 2)
-    public void tearDown() throws IOException {
+    @After
+    public void tearDown(Scenario scenario) throws IOException {
+        screenShot( scenario);
         SetUp.driver.quit();
     }
-    //ScreenShot method
-    @After(order = 1)
-    public void screenShot(Scenario scenario) throws IOException {
-        if (scenario.isFailed()) {
-            try {
-                Object Timestamp = new SimpleDateFormat(" yy-MM-dd HH-mm-ss").format(new Date());
-                TakesScreenshot shot = (TakesScreenshot) driver;
-                File file = shot.getScreenshotAs(OutputType.FILE);
-                File screensho_Destination = new File("./target/Screenshot/Screenshot" + scenario.getName() + Timestamp + ".png");
-                FileUtils.copyFile(file, screensho_Destination);
-            } catch (WebDriverException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } else {
-            try {
-                scenario.getName();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
+
 }
 
