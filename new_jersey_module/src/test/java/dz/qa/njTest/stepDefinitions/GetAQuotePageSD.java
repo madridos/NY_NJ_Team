@@ -4,7 +4,8 @@ import dz.qa.njPages.GetAQuotePage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import static dz.qa.njTest.testbase.SetUp.*;
+
+import static dz.qa.njTest.testbase.SetUp.getAQuotePage;
 
 public class GetAQuotePageSD extends GetAQuotePage {
     @Given("the user Lands in Stat farm home page")
@@ -40,12 +41,8 @@ public class GetAQuotePageSD extends GetAQuotePage {
     public void user_click_on_next_Vehicles_button() throws InterruptedException {
         getAQuotePage.user_click_on_next_Vehicles_button_Step();
     }
-//    @Then("User should see the next form {string}")
-//    public void user_should_see_the_next_form(String string) throws InterruptedException {
-//        getAQuotePage.user_should_see_the_next_form_Step(string);
-//    }
     @Then("User should see the next form {string}")
     public void user_should_see_the_next_form(String string) throws InterruptedException {
-        getAutoQuote.user_should_see_the_next_form_Step(string);
+        getAQuotePage.user_should_see_the_next_form_Step(string);
     }
 }
