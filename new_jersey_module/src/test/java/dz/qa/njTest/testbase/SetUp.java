@@ -4,6 +4,7 @@ import dz.qa.njPages.GetPetInsuranceQuotePage;
 import dz.qa.njPages.HomePage;
 import dz.qa.njPages.LoginPage;
 import dz.qa.njPages.PetMedicalPage;
+import dz.qa.njPages.MedicareSupplementPage;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -21,11 +22,13 @@ public class SetUp extends WebAPI {
     public static LoginPage loginPage;
     public static PetMedicalPage petMedicalPage;
     public static GetPetInsuranceQuotePage getPetInsuranceQuotePage;
+    public static MedicareSupplementPage medicareSupplementPage;
     public static void Init() {
         homePage = PageFactory.initElements(driver, HomePage.class);
         loginPage = PageFactory.initElements(driver, LoginPage.class);
         petMedicalPage = PageFactory.initElements(driver, PetMedicalPage.class);
         getPetInsuranceQuotePage = PageFactory.initElements(driver,GetPetInsuranceQuotePage.class);
+        medicareSupplementPage=PageFactory.initElements(driver,MedicareSupplementPage.class);
     }
     @Before
     public void setUp_Init() throws IOException {
@@ -35,9 +38,8 @@ public class SetUp extends WebAPI {
     }
     @After
     public void tearDown(Scenario scenario) throws IOException {
-        screenShot(scenario);
+        screenShot( scenario);
         SetUp.driver.quit();
     }
-
 }
 
