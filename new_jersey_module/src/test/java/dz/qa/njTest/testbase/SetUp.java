@@ -20,8 +20,6 @@ public class SetUp extends WebAPI {
     public static MedicareSupplementPage medicareSupplementPage;
     public static GetPetInsuranceQuotePage getPetInsuranceQuotePage;
     public static PetMedicalPage petMedicalPage;
-    public static GetPetInsuranceQuotePage getPetInsuranceQuotePage;
-    public static MedicareSupplementPage medicareSupplementPage;
     public static void Init() {
         homePage = PageFactory.initElements(driver, HomePage.class);
         loginPage = PageFactory.initElements(driver, LoginPage.class);
