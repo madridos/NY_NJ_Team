@@ -9,35 +9,7 @@ import org.openqa.selenium.WebElement;
 import static dz.qa.njTest.testbase.SetUp.*;
 
 public class MedicareSupplementSD extends MedicareSupplementPage {
-    @Given("the user launch the browser")
-    public void the_user_launch_the_browser() {
 
-    }
-
-    @Given("enter the state farm {string} into a web browser.")
-    public void enter_the_state_farm_into_a_web_browser(String url) {
-        medicareSupplementPage.enter_the_state_farm_into_a_web_browser_test(url);
-    }
-
-    @Then("state farm home Page appears")
-    public void state_farm_home_Page_appears() {
-        medicareSupplementPage.state_farm_home_Page_appears_Test();
-    }
-
-    @When("user click on INSURANCE link on hom Page")
-    public void user_click_on_INSURANCE_link_on_hom_Page() {
-        medicareSupplementPage.user_click_on_INSURANCE_link_on_hom_Page_Test();
-    }
-
-    @When("he clicks on Medicare Supplement")
-    public void he_clicks_on_Medicare_Supplement() {
-        medicareSupplementPage.he_clicks_on_Medicare_Supplement_Test();
-    }
-
-    @Then("Medicare Supplement page appears")
-    public void medicare_Supplement_page_appears() {
-        medicareSupplementPage.medicare_Supplement_page_appears();
-    }
     // Scenario:Sen-01 scroll To Element to element
     @Given("user on Medicare Supplement scroll To Find an Agent Element")
     public void user_on_Medicare_Supplement_scroll_To_Find_an_Agent_Element() {

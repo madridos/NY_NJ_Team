@@ -1,10 +1,12 @@
 package dz.qa.njPages;
+
 import common.WebAPI;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.Select;
+
 public class Non_Costumers_ClaimPage extends WebAPI {
     public static final String claim_Non_Costumer_LinkedText = "Claims for non-customers";
     @FindBy(how = How.LINK_TEXT, using = claim_Non_Costumer_LinkedText)
@@ -30,9 +32,12 @@ public class Non_Costumers_ClaimPage extends WebAPI {
     public static final String continue_button_is_Displayed_Css = "dateOfLoss-continue-link";
     @FindBy(how = How.ID, using = continue_button_is_Displayed_Css)
     public static WebElement continue_button_is_Displayed;
-    public static final String lastName_field_is_Visible_Css = " #insuredLastName";
-    @FindBy(how = How.CSS, using = lastName_field_is_Visible_Css)
+    public static final String lastName_field_is_Visible_XP = "//div[contains(text(),'Enter last name')]";
+    @FindBy(how = How.XPATH, using = lastName_field_is_Visible_XP)
     public static WebElement lastName_field_is_Visible;
+    public static final String lastName_field_SendKeysCSS = "#insuredLastName";
+    @FindBy(how = How.CSS, using = lastName_field_SendKeysCSS)
+    public static WebElement lastName_field_SendKeys;
     public static final String continue_button_for_LastName_Search_Id = "insuredLastName-continue-link";
     @FindBy(how = How.ID, using = continue_button_for_LastName_Search_Id)
     public static WebElement continue_button_for_LastName_Search;
@@ -42,21 +47,27 @@ public class Non_Costumers_ClaimPage extends WebAPI {
     public static final String continue_button_for_total_Search_Id = "policyNumber-continue-link";
     @FindBy(how = How.ID, using = continue_button_for_total_Search_Id)
     public static WebElement continue_button_for_total_Search;
+
     public void user_clicks_on_Claims_for_non_customers_link_text_test() {
         claim_Non_Costumer.click();
     }
+
     public void user_should_see_page_test(String string) {
+
     }
+
     public void user_clicks_on_individual_function_Test() throws InterruptedException {
         click_On_Individual.click();
         Thread.sleep(2000);
     }
-    public void a_calendar_and_drop_down_fields_appear_Test() throws InterruptedException {
+
+    public String a_calendar_and_drop_down_fields_appear_Test() throws InterruptedException {
         String text = date_Field_Displayed.getText();
         String actual_Result_Date_Field = text;
-        // String expected_ResultDate_Filed="What date did the incident happen?";
-        Assert.assertTrue(actual_Result_Date_Field, true);
+
+        return text;
     }
+
     public void user_enters_a_date_Test() throws InterruptedException {
         calender_display.sendKeys("02/14/2020");
 
@@ -74,6 +85,7 @@ public class Non_Costumers_ClaimPage extends WebAPI {
 //        }
         Thread.sleep(2000);
     }
+
     public void hours_and_minutes_and_period_of_day_test() throws InterruptedException {
         Select select = new Select(hour_drop_down);
         select.selectByIndex(2);
@@ -85,6 +97,7 @@ public class Non_Costumers_ClaimPage extends WebAPI {
         select2.selectByValue("PM");
         Thread.sleep(1000);
     }
+
     public void user_should_see_a_continue_button_and_click_on_it_Test() throws InterruptedException {
         boolean isdisplayed = continue_button_is_Displayed.isDisplayed();
         Assert.assertTrue(isdisplayed);
@@ -92,19 +105,21 @@ public class Non_Costumers_ClaimPage extends WebAPI {
         continue_button_is_Displayed.click();
         Thread.sleep(2000);
     }
-    public void a_filed_with_last_name_request_should_be_displayed_Test() {
-//        String actual_last_Name_is_displayed=lastName_field_is_Visible.getText() ;
-//        String expected_last_Name_is_displayed ="What is the State Farm policyholder's last name?";
-//        Assert.assertEquals(actual_last_Name_is_displayed,expected_last_Name_is_displayed);
-//        System.out.println("last name field is displayed");
+
+    public String a_filed_with_last_name_request_should_be_displayed_Test() {
+        String actual_last_Name_is_displayed=lastName_field_is_Visible.getText() ;
+        return actual_last_Name_is_displayed;
     }
+
     public void user_enters_a_last_name_and_clicks_on_enter_Test() {
-        lastName_field_is_Visible.sendKeys("mahmudul");
+        lastName_field_SendKeys.sendKeys("mahmudul");
         continue_button_for_LastName_Search.click();
     }
+
     public void another_field_of_policy_number_should_be_displayed_Test() {
         policy_field.sendKeys("4563789238ruff748");
     }
+
     public void user_should_enter_his_state_farm_policy_number_and_clicks_on_enter_Test() {
         continue_button_for_total_Search.click();
     }

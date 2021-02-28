@@ -34,7 +34,7 @@ public class GetPetInsuranceQuotePage extends WebAPI {
     final static String apartmentXP="//input[@id='sfx_userAddress.apartmentOrUnitNumber_input']";
     @FindBy(how = How.XPATH,using = apartmentXP)
     static WebElement apartment;
-    final static String continueButtonID="welcome.continue]";
+    final static String continueButtonID="welcome.continue";
     @FindBy(how = How.ID,using =continueButtonID )
     static WebElement continueButton;
 
@@ -58,6 +58,7 @@ public class GetPetInsuranceQuotePage extends WebAPI {
     }
 
     public void user_click_on_continue_Test() {
+        scrollToElementJScript( continueButton);
         continueButton.click();
     }
 }

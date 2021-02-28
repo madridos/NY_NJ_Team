@@ -23,7 +23,8 @@ public class Non_Costumers_ClaimSD extends Non_Costumers_ClaimPage {
     }
     @Then("a calendar and drop down fields appear")
     public void a_calendar_and_drop_down_fields_appear() throws InterruptedException {
-        non_Costumers_ClaimPage.a_calendar_and_drop_down_fields_appear_Test();
+        String actual_Result_Date_Field = non_Costumers_ClaimPage.a_calendar_and_drop_down_fields_appear_Test();
+        Assert.assertTrue(actual_Result_Date_Field, true);
     }
     @When("user enters a date")
     public void user_enters_a_date() throws InterruptedException {
@@ -39,7 +40,10 @@ public class Non_Costumers_ClaimSD extends Non_Costumers_ClaimPage {
     }
     @Then("a filed with last name request should be displayed")
     public void a_filed_with_last_name_request_should_be_displayed() {
-        non_Costumers_ClaimPage.a_filed_with_last_name_request_should_be_displayed_Test();
+       String actual_last_Name_is_displayed = non_Costumers_ClaimPage.a_filed_with_last_name_request_should_be_displayed_Test();
+
+        Assert.assertTrue(actual_last_Name_is_displayed, true);
+        System.out.println("bnczcbs"+actual_last_Name_is_displayed);
     }
     @When("user enters a last name and clicks on enter")
     public void user_enters_a_last_name_and_clicks_on_enter() {

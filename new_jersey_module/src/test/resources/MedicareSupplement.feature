@@ -1,15 +1,13 @@
 Feature: Medicare Supplement
   Background:
-    Given the user launch the browser
-    And enter the state farm "URL" into a web browser.
-    Then state farm home Page appears
-    When user click on INSURANCE link on hom Page
-    And he clicks on Medicare Supplement
-    Then Medicare Supplement page appears
+    Given user is on state farm home page and should see their title displayed ""
+    When user clicks on "INSURANCE" on the page header bar menu
+    When user clicks on "Medicare Supplement" link
+    Then user should land on "Medicare Supplement Insurance - State Farm®" page
 
   Scenario:Sen-01 scroll To Element
     Given user on Medicare Supplement scroll To Find an Agent Element
-    Then enter "Zip code" into zip code field
+    Then enter "07306" into zip code field
     When he clicks on go button a Find a State Farm Agent Near You page should appaers
 
   Scenario Outline:Sen-02 Learn about Medicare Supplement Insurance by stats

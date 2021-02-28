@@ -2,12 +2,13 @@ Feature: File a claim for costumers
   In order to test file a claim
   As a costumer
   I have to specify the features of file a claim
-  Background:
-    Given user landed on state farm home page
-    When  user clicks on CLAIMS on the page header bar menu
-    Then  drop down menu section containing "State Farm Claims","Claims Help Center" and "Roadside Assistance" should appear
-    When  user clicks on "State Farm Claims"
-  Scenario: aghiles 00 file a claim for costumers for Auto &Motorcycle
+  Background:aghiles 00 State Farm Claims section
+    Given user is on state farm home page and should see their title displayed ""
+    When user clicks on "CLAIMS" on the page header bar menu
+    Then drop down menu section containing "State Farm Claims","Claims Help Center" and "Roadside Assistance" should appear
+    When user clicks on "State Farm Claims" link
+    Then user should land on "State Farm® Claims - File a Claim, Manage a Claim - State Farm®" page
+  Scenario: aghiles 01 file a claim for costumers for Auto &Motorcycle
     When costumers click on "file a claim"
     And  select "Auto & Motorcycle
     Then a start option should be displayed and click to start

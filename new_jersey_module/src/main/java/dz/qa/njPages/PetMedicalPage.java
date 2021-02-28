@@ -7,7 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 public class PetMedicalPage extends WebAPI {
-
+    static final String Term_Life_LinkedText="Term Life";
+    @FindBy(how=How.LINK_TEXT,using =Term_Life_LinkedText)
+    static WebElement Term_Life;
     final static String pet_medical_link_LTEXT="PET MEDICAL";
     @FindBy(how=How.LINK_TEXT,using=pet_medical_link_LTEXT)
     static WebElement pet_medical_link;
@@ -18,21 +20,14 @@ public class PetMedicalPage extends WebAPI {
     @FindBy(how= How.XPATH,using=INSURANCE_Link_XP)
     static WebElement INSURANCE_Link;
 
-    public void user_click_on_insurance_button_Test() {
-    INSURANCE_Link.click();
+
+    public void user_scrolls_down_to_the_footer_page_test() {
+        scrollToElementJScript(Term_Life);
     }
 
-    public String user_should_see_drop_down_contains_Test(String string) {
-        string=pet_medical_link.getText();
-        return string;
-    }
-    public void user_click_on_PET_MEDICAL_link_Test() {
-        pet_medical_link.click();
-    }
-    public void user_should_land_on_PET_MEDICAL_Page_Test() {
-        String actual_pet_insurance_text =pet_insurance_text.getText();
-        System.out.println(actual_pet_insurance_text);
-        String expected_pet_insurance_text = "Pet Insurance From State Farm® and Trupanion®";
-        Assert.assertEquals(expected_pet_insurance_text,actual_pet_insurance_text);
+    public String user_click_on_the_link_test() {
+        Term_Life.click();
+      String actualTitle =  driver.getTitle();
+      return   actualTitle;
     }
 }
