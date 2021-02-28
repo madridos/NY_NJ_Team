@@ -16,7 +16,7 @@ import org.openqa.selenium.support.How;
         public static final String medicareSupplementPageClick_link="Medicare Supplement";
         @FindBy(how=How.LINK_TEXT,using=medicareSupplementPageClick_link)
         public static WebElement medicareSupplementPageClick;
-        public static final String scolToElement_Xpath="//h5[@class='card-title mb-3']";
+        public static final String scolToElement_Xpath="//div/h5[@class='card-title mb-3']";
         @FindBy(how=How.XPATH,using=scolToElement_Xpath)
         public static WebElement scolToElement;
         public static final String zipCodeField_Xpath ="//input[@id='0-17-3074893-3']";
@@ -48,26 +48,6 @@ import org.openqa.selenium.support.How;
         @FindBy(how=How.XPATH,using=insuranceLink_Click_Xpath )
         public static WebElement insuranceLink_Click;
         // methods
-        public void enter_the_state_farm_into_a_web_browser_test(String url) {
-            url="https://www.statefarm.com";
-            driver.get(url);
-        }
-        public void state_farm_home_Page_appears_Test() {
-            String expectedTitle= driver.getTitle() ;
-            String actuelTitle="Auto, Life Insurance, Banking, & More. Get a Free Quote - State Farm®";
-            Assert.assertEquals(expectedTitle,actuelTitle);
-        }
-        public void user_click_on_INSURANCE_link_on_hom_Page_Test() {
-            Insurance_click.click();
-        }
-        public void he_clicks_on_Medicare_Supplement_Test() {
-            medicareSupplementPageClick.click();
-        }
-        public void medicare_Supplement_page_appears() {
-            String actuelTitle= driver.getTitle() ;
-            String expectedTitle="Medicare Supplement Insurance - State Farm®";
-            Assert.assertEquals(expectedTitle,actuelTitle);
-        }
 
         public void user_on_Medicare_Supplement_scroll_To_Find_an_Agent_Element_Tes() {
             scrollToElementJScript( scolToElement);

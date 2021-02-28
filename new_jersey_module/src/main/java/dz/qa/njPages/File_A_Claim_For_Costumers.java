@@ -14,8 +14,8 @@ public class File_A_Claim_For_Costumers extends WebAPI {
     public static final String start_button_Id = "[id='accident']";
     @FindBy(how = How.CSS, using = start_button_Id)
     public static WebElement start_button;
-    public static final String select_State_Farm_Costumer_Css = "body.formal.-oneX.-oneX-resize-bound:nth-child(2) section.west.claims.panels.-w_pt-80.-w_mt-100.-w_pb-100:nth-child(3) div.-oneX-container div.-oneX-row div.-oneX-col-12.-oneX-col-md-7:nth-child(2) div.-oneX-row div.-oneX-col-12 div.-oneX-col-11.-oneX-col-sm-10.-w_pl-25:nth-child(2) div.-oneX-panel--expansion:nth-child(2) > div.-oneX-panel-control";
-    @FindBy(how = How.CSS, using = select_State_Farm_Costumer_Css)
+    public static final String select_State_Farm_Costumer_XP = "//label[contains(text(),'m a State Farm customer')]";
+    @FindBy(how = How.XPATH, using = select_State_Farm_Costumer_XP)
     public static WebElement select_State_Farm_Costumer;
     public static final String continue_Button_Id = "ph-start";
     @FindBy(how = How.ID, using = continue_Button_Id)

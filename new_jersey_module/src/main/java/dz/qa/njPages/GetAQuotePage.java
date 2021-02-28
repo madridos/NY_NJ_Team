@@ -68,21 +68,16 @@ public static final String nextVehicles_ID="btnContinue";
     public static final String pre_headingSteps_XP="//div[@class='pre-heading']";
     @FindBy(how= How.XPATH, using=pre_headingSteps_XP)
     static WebElement pre_headingSteps;
-    public void the_user_Lands_in_Stat_farm_home_page_Step() {
-    }
 
-    public void user_click_on_GET_A_QUOTE_link_Step() {
-        GET_A_QUOTE_click.click();
-    }
-
-    public void user_should_see_a_dropdown_containing_select_product_zip_Start_a_Quote_Step() throws InterruptedException {
-List<String>listOptoin= new ArrayList<>();
+    public List<String> user_should_see_a_dropdown_containing_select_product_zip_Start_a_Quote_Step() throws InterruptedException {
+       List<String>listOptoin= new ArrayList<>();
         for (WebElement elem:OptionList) {
-            //Thread.sleep(200);
             String item = elem.getText();
              listOptoin.add(item);
         }
         listOptoin.add( QuoteButton.getText());
+        System.out.println(listOptoin);
+        return listOptoin;
     }
 
     public void user_enter_the_product_enter_a_zip_code_code_and_click_on_Start_a_Quote_Step(String string, String string2) {
@@ -91,53 +86,33 @@ List<String>listOptoin= new ArrayList<>();
         QuoteButton.click();
     }
 
-    public void user_should_see_a_message_step(String string) {
-       String actulText = message_Info.getText();
-        Assert.assertEquals(string,actulText);
+    public String user_should_see_a_message_step() {
+       String actualText = message_Info.getText();
+        return actualText;
     }
 
     public void user_enter_all_Indicates_required_field_Step(DataTable dataTable) throws InterruptedException {
        List<Object>required_FieldList = dataTable.asList(Object.class);
-        //System.out.println(required_FieldList);
         first_name.sendKeys((CharSequence) required_FieldList.get(0));
         last_name.sendKeys((CharSequence) required_FieldList.get(1));
         street1Adress.sendKeys((CharSequence) required_FieldList.get(2));
-        //stateProvince.click();
-        //stateProvince.sendKeys(required_FieldList.get(4));
-        //Thread.sleep(2000);
         zipPostalCode.clear();
         zipPostalCode.sendKeys((CharSequence) required_FieldList.get(5));
         date_of_birth.sendKeys((CharSequence) required_FieldList.get(6));
         effectiveDate.sendKeys((CharSequence) required_FieldList.get(7));
-//Thread.sleep(2000);
     }
 
     public void user_click_on_next_Vehicles_button_Step() throws InterruptedException {
-        //Thread.sleep(50000);
+
         JavascriptExecutor js = ((JavascriptExecutor) driver);
         js.executeScript("arguments[0].click();", nextVehicles);
-       // Thread.sleep(50000);
-        //nextVehicles.click();
-//        driver.manage().window().maximize();
-//       driver.manage().deleteAllCookies();
-//        driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
-//        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
     }
-
-
-
     public void user_should_see_the_next_form_Step(String string) throws InterruptedException {
-//       document.getElementById("myBtn").textContent;
-//        System.out.println(pre_headingSteps.getText());
-        //Thread.sleep(3000);
-//        JavascriptExecutor js1 = ((JavascriptExecutor) driver);
-//        String title = js1.executeScript("return document.textContent;",pre_headingSteps.getText()).toString();
-//        System.out.println(title);
-//        String next_Form = Vehicles_nextForm.getText();
-//        Assert.assertEquals(string,next_Form);
-//        String contentText = pre_headingSteps.getText();
-//        Assert.assertEquals(string,contentText);
+        String next_Form = Vehicles_nextForm.getText();
+        Assert.assertEquals(string,next_Form);
+        String contentText = pre_headingSteps.getText();
+        Assert.assertEquals(string,contentText);
     }
 
 

@@ -54,49 +54,25 @@ public class Term_LifePage extends WebAPI {
     @FindBy(how=How.XPATH,using=State_Initials_XP)
     static WebElement State_Initials;
 
-    //Background:
-    public void user_lands_on_State_farm_home_page_Test() {
-        String expected_Page_Title="Auto, Life Insurance, Banking, & More. Get a Free Quote - State Farm®";
-        String actual_page_Title=driver.getTitle();
-        Assert.assertEquals(expected_Page_Title,actual_page_Title);
-    }
-    public void user_clicks_on_link_in_the_header_bar_menu_Test(String string) {
-        INSURANCE_Link.click();
-    }
-    public void user_clicks_on_in_the_dropdown_menu_Test(String string) {
-        Term_Life.click();
-    }
-
-    //K01:Navigating and landing on Term Life page
-    public void user_should_land_on_Test(String string) {
-        String actual_page_URL=driver.getCurrentUrl();
-        Assert.assertEquals(string,actual_page_URL);
-    }
-    public void user_should_see_the_Test(String string) {
-        String actual_page_Title1=driver.getTitle();
-        Assert.assertEquals(string,actual_page_Title1);
-    }
-
     //K02:Get an Online Select Term Life Quote
     public void the_user_scrolls_down_in_the_Term_Life_Insurance_page_Test() {
         Actions ac =new Actions(driver);
         ac.moveToElement(Get_A_Quote_Text).build().perform();
     }
-    public void the_user_see_the_text_Test(String string) {
-        boolean Get_an_Online_Text_Is_Visible=Get_A_Quote_Text.isDisplayed();
-        Assert.assertTrue(Get_an_Online_Text_Is_Visible);
+    public boolean the_user_see_the_text_Test(String string) {
+        boolean Get_an_Online_Text_Is_Visible=driver.findElement(By.xpath("//*[contains(text(),'"+string+"')]")).isDisplayed();
+        return Get_an_Online_Text_Is_Visible;
     }
     public void the_user_select_from_the_dropdown_menu_Test(String string) {
-
      Select select= new Select(dropDow_Menu);
      select.selectByVisibleText(string);
     }
     public void the_user_clicks_on_the_GO_button_Test() {
         Go_button.click();
     }
-    public void the_user_should_land_on_Test(String Expected_Title) {
-        String Actual_Title=driver.getTitle();
-        Assert.assertEquals(Expected_Title,Actual_Title);
+    public String the_user_should_land_on_Test() {
+        String actual_Title=driver.getTitle();
+        return actual_Title;
     }
 
     //K03:Comparing Term Life Choices
@@ -104,15 +80,16 @@ public class Term_LifePage extends WebAPI {
         Actions ac=new Actions(driver);
         ac.moveToElement(Comparing_erm_Table).build().perform();
     }
-    public void the_user_gets_to_Comparing_Term_Life_Choices_table_Test() {
+    public boolean the_user_gets_to_Comparing_Term_Life_Choices_table_Test() {
         boolean Comparing_erm_Table_Is_Displayed=Comparing_erm_Table.isDisplayed();
-        Assert.assertTrue(Comparing_erm_Table_Is_Displayed);
+       return Comparing_erm_Table_Is_Displayed;
     }
-    public void the_user_should_see_Text_Test(String Expected_Text) {
+
+    public String the_user_should_see_Text_Test() {
         String Actual_Text=compare_Choices.getText().trim();
-        boolean compare_Choices=Actual_Text.contains(Actual_Text);
-        Assert.assertTrue(compare_Choices);
+        return Actual_Text;
     }
+    //K04:Comparing Term to Permanent Insurance
     public void the_user_scrolls_down_in_the_Term_Life_Insurance_page_to_Comparing_Term_to_Permanent_Insurance_Test() throws InterruptedException {
         Actions ac =new Actions(driver);
         Thread.sleep(2000);
@@ -123,20 +100,9 @@ public class Term_LifePage extends WebAPI {
         String table_tag=compare_accounts.getTagName();
         System.out.println(table_tag);
     }
-    public void the_user_should_see_the_Term_Life_and_Permanent_Life_like_shown_in_the_below_table_Test(DataTable dataTable) {
+    public List<WebElement> the_user_should_see_the_Term_Life_and_Permanent_Life_like_shown_in_the_below_table_Test() {
 //        Table_Elements
-        List<String>dataTableList=dataTable.asList(String.class);
-        List<String>Actual_valuesArrList= new ArrayList<>();
-        String [] Actual_valuesArr  = new String[Table_Elements.size()];
-        String [] Expected_valuesArr= new String[dataTableList.size()];
-       for(int i=0;i<Table_Elements.size();i++) {
-           Actual_valuesArrList.add(Table_Elements.get(i).getText());
-           Actual_valuesArr[i]=Table_Elements.get(i).getText();
-           Expected_valuesArr[i]=dataTableList.get(i);
-//         Assert.assertEquals(Expected_valuesArr[i],Actual_valuesArr[i]);
-       }
-       Assert.assertArrayEquals(Actual_valuesArrList.toArray(),dataTableList.toArray());
-
+       return Table_Elements;
     }
 
     public  void the_user_scrolled_down_to_text_Test(String string) {
@@ -157,9 +123,9 @@ public class Term_LifePage extends WebAPI {
         Start_Quote_Button.click();
     }
 
-    public void the_user_should_see_the_when_landing_in_the_new_page_Test(String string) {
-        String Expected_Text_XP="//h1[contains(text(),'"+string.replaceAll("[']","")+"')]";
-        String Expected_Text=driver.findElement(By.xpath(Expected_Text_XP)).getText();
-        driver.navigate().back();
+    public String the_user_should_see_the_when_landing_in_the_new_page_Test(String string) {
+        String actual_Text_XP="//h1";
+        String actual_Text=driver.findElement(By.xpath(actual_Text_XP)).getText();
+        return actual_Text;
     }
 }
