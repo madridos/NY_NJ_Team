@@ -5,8 +5,8 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 
-      // features = "src/test/resources",
-        features = "src/test/resources/GetPetInsuranceQuotePage.feature",
+       features = "src/test/resources",
+        //features = "src/test/resources/GetPetInsuranceQuotePage.feature",
 
         glue = {"dz/qa/njTest/testbase","dz/qa/njTest/stepDefinitions"},
         plugin = { "html:target/cucumber-reports/HTML_Report.html","json:target/cucumber-reports/JSON_Report.json",
