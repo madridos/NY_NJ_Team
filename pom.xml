@@ -135,11 +135,13 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M5</version>
+
                 <configuration>
-                    <suiteXmlFiles>
+                    <includes>
+                        <include>Runner.java</include>
                         <!--                        target/test-classes/AmazonTestRunner.xml-->
                         <!--                    <suiteXmlFiles>target/test-classes/StateFarm_Runner.xml</suiteXmlFiles>-->
-                    </suiteXmlFiles>
+                    </includes>
                 </configuration>
             </plugin>
         </plugins>
