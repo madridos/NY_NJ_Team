@@ -7,6 +7,8 @@
     <artifactId>NY_NJ_Team</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
+
     <modules>
         <module>Generic</module>
         <module>new_york_module</module>
@@ -136,10 +138,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M5</version>
                 <configuration>
-                    <suiteXmlFiles>
-                        <!--                        target/test-classes/AmazonTestRunner.xml-->
-                        <!--                    <suiteXmlFiles>target/test-classes/StateFarm_Runner.xml</suiteXmlFiles>-->
-                    </suiteXmlFiles>
+                    <includes>
+                        <include>Runner.java</include>
+                    </includes>
                 </configuration>
             </plugin>
         </plugins>
